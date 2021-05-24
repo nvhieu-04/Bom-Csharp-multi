@@ -1,0 +1,17 @@
+D:\HK4\Lập trình mạng căn bản - NT106.L21.MMCL\Đồ án\Bomberman-master-c#\BombermanMultiplayer\bin\Debug\BombermanMultiplayer.exe.config
+D:\HK4\Lập trình mạng căn bản - NT106.L21.MMCL\Đồ án\Bomberman-master-c#\BombermanMultiplayer\bin\Debug\BombermanMultiplayer.exe
+D:\HK4\Lập trình mạng căn bản - NT106.L21.MMCL\Đồ án\Bomberman-master-c#\BombermanMultiplayer\bin\Debug\BombermanMultiplayer.pdb
+D:\HK4\Lập trình mạng căn bản - NT106.L21.MMCL\Đồ án\Bomberman-master-c#\BombermanMultiplayer\obj\Debug\Booom.csprojAssemblyReference.cache
+D:\HK4\Lập trình mạng căn bản - NT106.L21.MMCL\Đồ án\Bomberman-master-c#\BombermanMultiplayer\obj\Debug\BombermanMultiplayer.About.resources
+D:\HK4\Lập trình mạng căn bản - NT106.L21.MMCL\Đồ án\Bomberman-master-c#\BombermanMultiplayer\obj\Debug\BombermanMultiplayer.GameWindow.resources
+D:\HK4\Lập trình mạng căn bản - NT106.L21.MMCL\Đồ án\Bomberman-master-c#\BombermanMultiplayer\obj\Debug\BombermanMultiplayer.HighScore.resources
+D:\HK4\Lập trình mạng căn bản - NT106.L21.MMCL\Đồ án\Bomberman-master-c#\BombermanMultiplayer\obj\Debug\BombermanMultiplayer.Lobby.resources
+D:\HK4\Lập trình mạng căn bản - NT106.L21.MMCL\Đồ án\Bomberman-master-c#\BombermanMultiplayer\obj\Debug\BombermanMultiplayer.MainMenu.resources
+D:\HK4\Lập trình mạng căn bản - NT106.L21.MMCL\Đồ án\Bomberman-master-c#\BombermanMultiplayer\obj\Debug\BombermanMultiplayer.Mode.resources
+D:\HK4\Lập trình mạng căn bản - NT106.L21.MMCL\Đồ án\Bomberman-master-c#\BombermanMultiplayer\obj\Debug\BombermanMultiplayer.Properties.Resources.resources
+D:\HK4\Lập trình mạng căn bản - NT106.L21.MMCL\Đồ án\Bomberman-master-c#\BombermanMultiplayer\obj\Debug\BombermanMultiplayer.Setting.resources
+D:\HK4\Lập trình mạng căn bản - NT106.L21.MMCL\Đồ án\Bomberman-master-c#\BombermanMultiplayer\obj\Debug\BombermanMultiplayer.Tutorial.resources
+D:\HK4\Lập trình mạng căn bản - NT106.L21.MMCL\Đồ án\Bomberman-master-c#\BombermanMultiplayer\obj\Debug\Booom.csproj.GenerateResource.cache
+D:\HK4\Lập trình mạng căn bản - NT106.L21.MMCL\Đồ án\Bomberman-master-c#\BombermanMultiplayer\obj\Debug\Booom.csproj.CoreCompileInputs.cache
+D:\HK4\Lập trình mạng căn bản - NT106.L21.MMCL\Đồ án\Bomberman-master-c#\BombermanMultiplayer\obj\Debug\BombermanMultiplayer.exe
+D:\HK4\Lập trình mạng căn bản - NT106.L21.MMCL\Đồ án\Bomberman-master-c#\BombermanMultiplayer\obj\Debug\BombermanMultiplayer.pdb
