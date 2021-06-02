@@ -69,7 +69,7 @@ namespace ServerMain
                     currentData = (string) Deserialize(buffer);
                     string Data = currentData as string;
                     char[] b = {';' };
-                    Int32 count = 4;
+                    Int32 count = 5;
                     String[] strList = Data.Split(b, count, StringSplitOptions.RemoveEmptyEntries);
                     if(strList[0].Equals("newroom"))
                     {
@@ -77,12 +77,21 @@ namespace ServerMain
                         {
                             Send("newroom;yes;ok",player.client);
                             player.port = Int32.Parse(strList[3]);
-                            
+                            player.Username = strList[4];
 
                         }
                         if (strList[1].Equals("no"))
                         {
-                            Send("newroom;no;ok;"+ player.Username, player.client);
+                            foreach(Player item in Player)
+                            {
+                                if(item.Username.Equals(strList[2]))
+                                {
+
+                                    Send("newroom;no;ok;"+item.port, player.client);
+                                    break;
+                                }
+                            }
+
                         }
 
                     }    

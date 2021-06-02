@@ -51,22 +51,22 @@
             this.panelClient = new System.Windows.Forms.Panel();
             this.lbConnectToAGame = new System.Windows.Forms.Label();
             this.lbAdressConnect = new System.Windows.Forms.Label();
-            this.tbAddressConnect = new System.Windows.Forms.TextBox();
             this.lbPortConnect = new System.Windows.Forms.Label();
-            this.tbPortConnect = new System.Windows.Forms.TextBox();
+            this.tbNamePEER = new System.Windows.Forms.TextBox();
             this.panelServer = new System.Windows.Forms.Panel();
             this.lbCreateServer = new System.Windows.Forms.Label();
             this.lbSaveGame = new System.Windows.Forms.Label();
             this.tbGameToLoad = new System.Windows.Forms.TextBox();
             this.btnLoadGame = new System.Windows.Forms.Button();
             this.lbPortServer = new System.Windows.Forms.Label();
-            this.tbPortServer = new System.Windows.Forms.TextBox();
+            this.tbName = new System.Windows.Forms.TextBox();
             this.lbServerOnline = new System.Windows.Forms.Label();
             this.ConnectionTimer = new System.Windows.Forms.Timer(this.components);
             this.refreshGraphics = new System.Windows.Forms.Timer(this.components);
             this.panelPlayerList = new System.Windows.Forms.Panel();
             this.pbGame = new System.Windows.Forms.PictureBox();
             this.panelGame = new System.Windows.Forms.Panel();
+            this.btnStartClient = new System.Windows.Forms.Button();
             this.tslMenu.SuspendLayout();
             this.PanelConnections.SuspendLayout();
             this.panelPlayersOptions.SuspendLayout();
@@ -231,12 +231,12 @@
             // panelClient
             // 
             this.panelClient.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelClient.Controls.Add(this.btnStartClient);
             this.panelClient.Controls.Add(this.lbConnectToAGame);
             this.panelClient.Controls.Add(this.lbAdressConnect);
-            this.panelClient.Controls.Add(this.tbAddressConnect);
             this.panelClient.Controls.Add(this.btnClient);
             this.panelClient.Controls.Add(this.lbPortConnect);
-            this.panelClient.Controls.Add(this.tbPortConnect);
+            this.panelClient.Controls.Add(this.tbNamePEER);
             this.panelClient.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelClient.Location = new System.Drawing.Point(0, 0);
             this.panelClient.Margin = new System.Windows.Forms.Padding(2);
@@ -267,17 +267,6 @@
             this.lbAdressConnect.TabIndex = 5;
             this.lbAdressConnect.Text = "IP";
             // 
-            // tbAddressConnect
-            // 
-            this.tbAddressConnect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tbAddressConnect.Location = new System.Drawing.Point(4, 102);
-            this.tbAddressConnect.Margin = new System.Windows.Forms.Padding(2);
-            this.tbAddressConnect.Name = "tbAddressConnect";
-            this.tbAddressConnect.Size = new System.Drawing.Size(76, 20);
-            this.tbAddressConnect.TabIndex = 4;
-            this.tbAddressConnect.Text = "127.0.0.1";
-            // 
             // lbPortConnect
             // 
             this.lbPortConnect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -286,20 +275,20 @@
             this.lbPortConnect.Location = new System.Drawing.Point(2, 33);
             this.lbPortConnect.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPortConnect.Name = "lbPortConnect";
-            this.lbPortConnect.Size = new System.Drawing.Size(26, 13);
+            this.lbPortConnect.Size = new System.Drawing.Size(64, 13);
             this.lbPortConnect.TabIndex = 3;
-            this.lbPortConnect.Text = "Port";
+            this.lbPortConnect.Text = "NamePEER";
             // 
-            // tbPortConnect
+            // tbNamePEER
             // 
-            this.tbPortConnect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tbNamePEER.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.tbPortConnect.Location = new System.Drawing.Point(4, 57);
-            this.tbPortConnect.Margin = new System.Windows.Forms.Padding(2);
-            this.tbPortConnect.Name = "tbPortConnect";
-            this.tbPortConnect.Size = new System.Drawing.Size(76, 20);
-            this.tbPortConnect.TabIndex = 2;
-            this.tbPortConnect.Text = "3000";
+            this.tbNamePEER.Location = new System.Drawing.Point(4, 57);
+            this.tbNamePEER.Margin = new System.Windows.Forms.Padding(2);
+            this.tbNamePEER.Name = "tbNamePEER";
+            this.tbNamePEER.Size = new System.Drawing.Size(76, 20);
+            this.tbNamePEER.TabIndex = 2;
+            this.tbNamePEER.Text = "3000";
             // 
             // panelServer
             // 
@@ -310,7 +299,7 @@
             this.panelServer.Controls.Add(this.btnLoadGame);
             this.panelServer.Controls.Add(this.btnLaunchServer);
             this.panelServer.Controls.Add(this.lbPortServer);
-            this.panelServer.Controls.Add(this.tbPortServer);
+            this.panelServer.Controls.Add(this.tbName);
             this.panelServer.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelServer.Location = new System.Drawing.Point(788, 0);
             this.panelServer.Margin = new System.Windows.Forms.Padding(2);
@@ -373,19 +362,19 @@
             this.lbPortServer.Location = new System.Drawing.Point(9, 29);
             this.lbPortServer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPortServer.Name = "lbPortServer";
-            this.lbPortServer.Size = new System.Drawing.Size(26, 13);
+            this.lbPortServer.Size = new System.Drawing.Size(35, 13);
             this.lbPortServer.TabIndex = 1;
-            this.lbPortServer.Text = "Port";
+            this.lbPortServer.Text = "Name";
             // 
-            // tbPortServer
+            // tbName
             // 
-            this.tbPortServer.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.tbPortServer.Location = new System.Drawing.Point(11, 53);
-            this.tbPortServer.Margin = new System.Windows.Forms.Padding(2);
-            this.tbPortServer.Name = "tbPortServer";
-            this.tbPortServer.Size = new System.Drawing.Size(76, 20);
-            this.tbPortServer.TabIndex = 0;
-            this.tbPortServer.Text = "3000";
+            this.tbName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tbName.Location = new System.Drawing.Point(11, 53);
+            this.tbName.Margin = new System.Windows.Forms.Padding(2);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(76, 20);
+            this.tbName.TabIndex = 0;
+            this.tbName.Text = "3000";
             // 
             // lbServerOnline
             // 
@@ -454,6 +443,16 @@
             this.panelGame.TabIndex = 7;
             this.panelGame.Visible = false;
             // 
+            // btnStartClient
+            // 
+            this.btnStartClient.Location = new System.Drawing.Point(309, 16);
+            this.btnStartClient.Name = "btnStartClient";
+            this.btnStartClient.Size = new System.Drawing.Size(86, 30);
+            this.btnStartClient.TabIndex = 9;
+            this.btnStartClient.Text = "StartClient";
+            this.btnStartClient.UseVisualStyleBackColor = true;
+            this.btnStartClient.Click += new System.EventHandler(this.btnStartClient_Click);
+            // 
             // Lobby
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -502,12 +501,11 @@
         private System.Windows.Forms.Panel PanelConnections;
         private System.Windows.Forms.Panel panelServer;
         private System.Windows.Forms.Label lbPortServer;
-        private System.Windows.Forms.TextBox tbPortServer;
+        private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Panel panelClient;
         private System.Windows.Forms.Label lbAdressConnect;
-        private System.Windows.Forms.TextBox tbAddressConnect;
         private System.Windows.Forms.Label lbPortConnect;
-        private System.Windows.Forms.TextBox tbPortConnect;
+        private System.Windows.Forms.TextBox tbNamePEER;
         private System.Windows.Forms.Label lbServerOnline;
         private System.Windows.Forms.Label lbLstPlayers;
         private System.Windows.Forms.Timer ConnectionTimer;
@@ -528,5 +526,6 @@
         private System.Windows.Forms.Label lbConnectToAGame;
         private System.Windows.Forms.Label lbCreateServer;
         private System.Windows.Forms.Panel panelGame;
+        private System.Windows.Forms.Button btnStartClient;
     }
 }
