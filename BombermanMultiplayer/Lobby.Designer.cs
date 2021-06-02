@@ -81,19 +81,18 @@
             // 
             this.lbConnected.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbConnected.FormattingEnabled = true;
-            this.lbConnected.ItemHeight = 16;
-            this.lbConnected.Location = new System.Drawing.Point(0, 17);
-            this.lbConnected.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lbConnected.Location = new System.Drawing.Point(0, 13);
+            this.lbConnected.Margin = new System.Windows.Forms.Padding(2);
             this.lbConnected.Name = "lbConnected";
-            this.lbConnected.Size = new System.Drawing.Size(1387, 141);
+            this.lbConnected.Size = new System.Drawing.Size(1040, 115);
             this.lbConnected.TabIndex = 0;
             // 
             // btnLaunchServer
             // 
-            this.btnLaunchServer.Location = new System.Drawing.Point(15, 107);
-            this.btnLaunchServer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLaunchServer.Location = new System.Drawing.Point(11, 87);
+            this.btnLaunchServer.Margin = new System.Windows.Forms.Padding(2);
             this.btnLaunchServer.Name = "btnLaunchServer";
-            this.btnLaunchServer.Size = new System.Drawing.Size(137, 46);
+            this.btnLaunchServer.Size = new System.Drawing.Size(103, 37);
             this.btnLaunchServer.TabIndex = 1;
             this.btnLaunchServer.Text = "Launch ";
             this.btnLaunchServer.UseVisualStyleBackColor = true;
@@ -103,10 +102,10 @@
             // 
             this.btnClient.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClient.Location = new System.Drawing.Point(363, 66);
-            this.btnClient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClient.Location = new System.Drawing.Point(272, 54);
+            this.btnClient.Margin = new System.Windows.Forms.Padding(2);
             this.btnClient.Name = "btnClient";
-            this.btnClient.Size = new System.Drawing.Size(219, 50);
+            this.btnClient.Size = new System.Drawing.Size(164, 40);
             this.btnClient.TabIndex = 2;
             this.btnClient.Text = "Connect";
             this.btnClient.UseVisualStyleBackColor = true;
@@ -122,9 +121,9 @@
             this.tslMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsDropDownFile,
             this.tlsbExit});
-            this.tslMenu.Location = new System.Drawing.Point(12, 2);
+            this.tslMenu.Location = new System.Drawing.Point(9, 2);
             this.tslMenu.Name = "tslMenu";
-            this.tslMenu.Size = new System.Drawing.Size(173, 53);
+            this.tslMenu.Size = new System.Drawing.Size(130, 44);
             this.tslMenu.Stretch = true;
             this.tslMenu.TabIndex = 2;
             this.tslMenu.Text = "toolStrip1";
@@ -138,13 +137,13 @@
             this.tsDropDownFile.Image = ((System.Drawing.Image)(resources.GetObject("tsDropDownFile.Image")));
             this.tsDropDownFile.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsDropDownFile.Name = "tsDropDownFile";
-            this.tsDropDownFile.Size = new System.Drawing.Size(85, 50);
+            this.tsDropDownFile.Size = new System.Drawing.Size(71, 41);
             this.tsDropDownFile.Text = "File";
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(183, 50);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(149, 42);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -154,7 +153,7 @@
             this.tlsbExit.Image = ((System.Drawing.Image)(resources.GetObject("tlsbExit.Image")));
             this.tlsbExit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tlsbExit.Name = "tlsbExit";
-            this.tlsbExit.Size = new System.Drawing.Size(77, 50);
+            this.tlsbExit.Size = new System.Drawing.Size(63, 41);
             this.tlsbExit.Text = "Exit";
             this.tlsbExit.Click += new System.EventHandler(this.tlsbExit_Click);
             // 
@@ -163,8 +162,9 @@
             this.lbLstPlayers.AutoSize = true;
             this.lbLstPlayers.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbLstPlayers.Location = new System.Drawing.Point(0, 0);
+            this.lbLstPlayers.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbLstPlayers.Name = "lbLstPlayers";
-            this.lbLstPlayers.Size = new System.Drawing.Size(81, 17);
+            this.lbLstPlayers.Size = new System.Drawing.Size(60, 13);
             this.lbLstPlayers.TabIndex = 1;
             this.lbLstPlayers.Text = "Players List";
             // 
@@ -176,10 +176,10 @@
             this.PanelConnections.Controls.Add(this.panelPlayersOptions);
             this.PanelConnections.Controls.Add(this.panelClient);
             this.PanelConnections.Controls.Add(this.panelServer);
-            this.PanelConnections.Location = new System.Drawing.Point(12, 225);
-            this.PanelConnections.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PanelConnections.Location = new System.Drawing.Point(9, 183);
+            this.PanelConnections.Margin = new System.Windows.Forms.Padding(2);
             this.PanelConnections.Name = "PanelConnections";
-            this.PanelConnections.Size = new System.Drawing.Size(1392, 189);
+            this.PanelConnections.Size = new System.Drawing.Size(1045, 154);
             this.PanelConnections.TabIndex = 4;
             // 
             // panelPlayersOptions
@@ -189,30 +189,31 @@
             this.panelPlayersOptions.Controls.Add(this.tbNamePlayer);
             this.panelPlayersOptions.Controls.Add(this.lbNamePlayer);
             this.panelPlayersOptions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPlayersOptions.Location = new System.Drawing.Point(631, 0);
-            this.panelPlayersOptions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelPlayersOptions.Location = new System.Drawing.Point(474, 0);
+            this.panelPlayersOptions.Margin = new System.Windows.Forms.Padding(2);
             this.panelPlayersOptions.Name = "panelPlayersOptions";
-            this.panelPlayersOptions.Size = new System.Drawing.Size(420, 185);
+            this.panelPlayersOptions.Size = new System.Drawing.Size(314, 150);
             this.panelPlayersOptions.TabIndex = 2;
             // 
             // lbPlayerOptions
             // 
             this.lbPlayerOptions.AutoSize = true;
             this.lbPlayerOptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPlayerOptions.Location = new System.Drawing.Point(5, 9);
+            this.lbPlayerOptions.Location = new System.Drawing.Point(4, 7);
+            this.lbPlayerOptions.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPlayerOptions.Name = "lbPlayerOptions";
-            this.lbPlayerOptions.Size = new System.Drawing.Size(149, 25);
+            this.lbPlayerOptions.Size = new System.Drawing.Size(122, 20);
             this.lbPlayerOptions.TabIndex = 8;
             this.lbPlayerOptions.Text = "Player options";
             // 
             // tbNamePlayer
             // 
             this.tbNamePlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.tbNamePlayer.Location = new System.Drawing.Point(158, 94);
-            this.tbNamePlayer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbNamePlayer.Location = new System.Drawing.Point(117, 76);
+            this.tbNamePlayer.Margin = new System.Windows.Forms.Padding(2);
             this.tbNamePlayer.MaxLength = 10;
             this.tbNamePlayer.Name = "tbNamePlayer";
-            this.tbNamePlayer.Size = new System.Drawing.Size(100, 22);
+            this.tbNamePlayer.Size = new System.Drawing.Size(76, 20);
             this.tbNamePlayer.TabIndex = 4;
             this.tbNamePlayer.Text = "Player";
             // 
@@ -220,9 +221,10 @@
             // 
             this.lbNamePlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbNamePlayer.AutoSize = true;
-            this.lbNamePlayer.Location = new System.Drawing.Point(162, 73);
+            this.lbNamePlayer.Location = new System.Drawing.Point(121, 59);
+            this.lbNamePlayer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNamePlayer.Name = "lbNamePlayer";
-            this.lbNamePlayer.Size = new System.Drawing.Size(97, 17);
+            this.lbNamePlayer.Size = new System.Drawing.Size(73, 13);
             this.lbNamePlayer.TabIndex = 5;
             this.lbNamePlayer.Text = "Player Name :";
             // 
@@ -237,18 +239,19 @@
             this.panelClient.Controls.Add(this.tbPortConnect);
             this.panelClient.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelClient.Location = new System.Drawing.Point(0, 0);
-            this.panelClient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelClient.Margin = new System.Windows.Forms.Padding(2);
             this.panelClient.Name = "panelClient";
-            this.panelClient.Size = new System.Drawing.Size(631, 185);
+            this.panelClient.Size = new System.Drawing.Size(474, 150);
             this.panelClient.TabIndex = 1;
             // 
             // lbConnectToAGame
             // 
             this.lbConnectToAGame.AutoSize = true;
             this.lbConnectToAGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbConnectToAGame.Location = new System.Drawing.Point(9, 9);
+            this.lbConnectToAGame.Location = new System.Drawing.Point(7, 7);
+            this.lbConnectToAGame.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbConnectToAGame.Name = "lbConnectToAGame";
-            this.lbConnectToAGame.Size = new System.Drawing.Size(207, 25);
+            this.lbConnectToAGame.Size = new System.Drawing.Size(171, 20);
             this.lbConnectToAGame.TabIndex = 6;
             this.lbConnectToAGame.Text = "Connect to a server ";
             // 
@@ -257,9 +260,10 @@
             this.lbAdressConnect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbAdressConnect.AutoSize = true;
-            this.lbAdressConnect.Location = new System.Drawing.Point(3, 101);
+            this.lbAdressConnect.Location = new System.Drawing.Point(2, 82);
+            this.lbAdressConnect.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAdressConnect.Name = "lbAdressConnect";
-            this.lbAdressConnect.Size = new System.Drawing.Size(20, 17);
+            this.lbAdressConnect.Size = new System.Drawing.Size(17, 13);
             this.lbAdressConnect.TabIndex = 5;
             this.lbAdressConnect.Text = "IP";
             // 
@@ -267,10 +271,10 @@
             // 
             this.tbAddressConnect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.tbAddressConnect.Location = new System.Drawing.Point(5, 126);
-            this.tbAddressConnect.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbAddressConnect.Location = new System.Drawing.Point(4, 102);
+            this.tbAddressConnect.Margin = new System.Windows.Forms.Padding(2);
             this.tbAddressConnect.Name = "tbAddressConnect";
-            this.tbAddressConnect.Size = new System.Drawing.Size(100, 22);
+            this.tbAddressConnect.Size = new System.Drawing.Size(76, 20);
             this.tbAddressConnect.TabIndex = 4;
             this.tbAddressConnect.Text = "127.0.0.1";
             // 
@@ -279,9 +283,10 @@
             this.lbPortConnect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbPortConnect.AutoSize = true;
-            this.lbPortConnect.Location = new System.Drawing.Point(3, 41);
+            this.lbPortConnect.Location = new System.Drawing.Point(2, 33);
+            this.lbPortConnect.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPortConnect.Name = "lbPortConnect";
-            this.lbPortConnect.Size = new System.Drawing.Size(34, 17);
+            this.lbPortConnect.Size = new System.Drawing.Size(26, 13);
             this.lbPortConnect.TabIndex = 3;
             this.lbPortConnect.Text = "Port";
             // 
@@ -289,10 +294,10 @@
             // 
             this.tbPortConnect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.tbPortConnect.Location = new System.Drawing.Point(5, 70);
-            this.tbPortConnect.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbPortConnect.Location = new System.Drawing.Point(4, 57);
+            this.tbPortConnect.Margin = new System.Windows.Forms.Padding(2);
             this.tbPortConnect.Name = "tbPortConnect";
-            this.tbPortConnect.Size = new System.Drawing.Size(100, 22);
+            this.tbPortConnect.Size = new System.Drawing.Size(76, 20);
             this.tbPortConnect.TabIndex = 2;
             this.tbPortConnect.Text = "3000";
             // 
@@ -307,10 +312,10 @@
             this.panelServer.Controls.Add(this.lbPortServer);
             this.panelServer.Controls.Add(this.tbPortServer);
             this.panelServer.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelServer.Location = new System.Drawing.Point(1051, 0);
-            this.panelServer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelServer.Location = new System.Drawing.Point(788, 0);
+            this.panelServer.Margin = new System.Windows.Forms.Padding(2);
             this.panelServer.Name = "panelServer";
-            this.panelServer.Size = new System.Drawing.Size(337, 185);
+            this.panelServer.Size = new System.Drawing.Size(253, 150);
             this.panelServer.TabIndex = 2;
             this.panelServer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelServer_Paint);
             // 
@@ -318,9 +323,10 @@
             // 
             this.lbCreateServer.AutoSize = true;
             this.lbCreateServer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCreateServer.Location = new System.Drawing.Point(5, 9);
+            this.lbCreateServer.Location = new System.Drawing.Point(4, 7);
+            this.lbCreateServer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCreateServer.Name = "lbCreateServer";
-            this.lbCreateServer.Size = new System.Drawing.Size(161, 25);
+            this.lbCreateServer.Size = new System.Drawing.Size(132, 20);
             this.lbCreateServer.TabIndex = 7;
             this.lbCreateServer.Text = "Create a server";
             // 
@@ -329,9 +335,10 @@
             this.lbSaveGame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbSaveGame.AutoSize = true;
-            this.lbSaveGame.Location = new System.Drawing.Point(199, 36);
+            this.lbSaveGame.Location = new System.Drawing.Point(149, 29);
+            this.lbSaveGame.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSaveGame.Name = "lbSaveGame";
-            this.lbSaveGame.Size = new System.Drawing.Size(101, 17);
+            this.lbSaveGame.Size = new System.Drawing.Size(76, 13);
             this.lbSaveGame.TabIndex = 6;
             this.lbSaveGame.Text = "Game to load :";
             // 
@@ -340,21 +347,21 @@
             this.tbGameToLoad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbGameToLoad.Enabled = false;
-            this.tbGameToLoad.Location = new System.Drawing.Point(200, 68);
-            this.tbGameToLoad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbGameToLoad.Location = new System.Drawing.Point(150, 55);
+            this.tbGameToLoad.Margin = new System.Windows.Forms.Padding(2);
             this.tbGameToLoad.Name = "tbGameToLoad";
             this.tbGameToLoad.ReadOnly = true;
-            this.tbGameToLoad.Size = new System.Drawing.Size(100, 22);
+            this.tbGameToLoad.Size = new System.Drawing.Size(76, 20);
             this.tbGameToLoad.TabIndex = 5;
             // 
             // btnLoadGame
             // 
             this.btnLoadGame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLoadGame.Location = new System.Drawing.Point(200, 107);
-            this.btnLoadGame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLoadGame.Location = new System.Drawing.Point(150, 87);
+            this.btnLoadGame.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoadGame.Name = "btnLoadGame";
-            this.btnLoadGame.Size = new System.Drawing.Size(120, 39);
+            this.btnLoadGame.Size = new System.Drawing.Size(90, 31);
             this.btnLoadGame.TabIndex = 4;
             this.btnLoadGame.Text = "Load Game";
             this.btnLoadGame.UseVisualStyleBackColor = true;
@@ -363,19 +370,20 @@
             // lbPortServer
             // 
             this.lbPortServer.AutoSize = true;
-            this.lbPortServer.Location = new System.Drawing.Point(12, 36);
+            this.lbPortServer.Location = new System.Drawing.Point(9, 29);
+            this.lbPortServer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPortServer.Name = "lbPortServer";
-            this.lbPortServer.Size = new System.Drawing.Size(34, 17);
+            this.lbPortServer.Size = new System.Drawing.Size(26, 13);
             this.lbPortServer.TabIndex = 1;
             this.lbPortServer.Text = "Port";
             // 
             // tbPortServer
             // 
             this.tbPortServer.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.tbPortServer.Location = new System.Drawing.Point(15, 65);
-            this.tbPortServer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbPortServer.Location = new System.Drawing.Point(11, 53);
+            this.tbPortServer.Margin = new System.Windows.Forms.Padding(2);
             this.tbPortServer.Name = "tbPortServer";
-            this.tbPortServer.Size = new System.Drawing.Size(100, 22);
+            this.tbPortServer.Size = new System.Drawing.Size(76, 20);
             this.tbPortServer.TabIndex = 0;
             this.tbPortServer.Text = "3000";
             // 
@@ -384,9 +392,10 @@
             this.lbServerOnline.AutoSize = true;
             this.lbServerOnline.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lbServerOnline.ForeColor = System.Drawing.Color.Red;
-            this.lbServerOnline.Location = new System.Drawing.Point(0, 401);
+            this.lbServerOnline.Location = new System.Drawing.Point(0, 327);
+            this.lbServerOnline.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbServerOnline.Name = "lbServerOnline";
-            this.lbServerOnline.Size = new System.Drawing.Size(92, 17);
+            this.lbServerOnline.Size = new System.Drawing.Size(69, 13);
             this.lbServerOnline.TabIndex = 5;
             this.lbServerOnline.Text = "Server online";
             this.lbServerOnline.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -407,10 +416,10 @@
             this.panelPlayerList.Controls.Add(this.lbConnected);
             this.panelPlayerList.Controls.Add(this.lbLstPlayers);
             this.panelPlayerList.Enabled = false;
-            this.panelPlayerList.Location = new System.Drawing.Point(12, 58);
-            this.panelPlayerList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelPlayerList.Location = new System.Drawing.Point(9, 47);
+            this.panelPlayerList.Margin = new System.Windows.Forms.Padding(2);
             this.panelPlayerList.Name = "panelPlayerList";
-            this.panelPlayerList.Size = new System.Drawing.Size(1391, 162);
+            this.panelPlayerList.Size = new System.Drawing.Size(1044, 132);
             this.panelPlayerList.TabIndex = 3;
             // 
             // pbGame
@@ -423,9 +432,9 @@
             this.pbGame.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pbGame.Enabled = false;
             this.pbGame.Location = new System.Drawing.Point(0, 0);
-            this.pbGame.Margin = new System.Windows.Forms.Padding(60);
+            this.pbGame.Margin = new System.Windows.Forms.Padding(45, 49, 45, 49);
             this.pbGame.Name = "pbGame";
-            this.pbGame.Size = new System.Drawing.Size(527, 377);
+            this.pbGame.Size = new System.Drawing.Size(396, 307);
             this.pbGame.TabIndex = 6;
             this.pbGame.TabStop = false;
             this.pbGame.Visible = false;
@@ -438,19 +447,19 @@
             this.panelGame.AutoSize = true;
             this.panelGame.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelGame.Controls.Add(this.pbGame);
-            this.panelGame.Location = new System.Drawing.Point(13, 420);
-            this.panelGame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelGame.Location = new System.Drawing.Point(10, 341);
+            this.panelGame.Margin = new System.Windows.Forms.Padding(2);
             this.panelGame.Name = "panelGame";
-            this.panelGame.Size = new System.Drawing.Size(1389, 657);
+            this.panelGame.Size = new System.Drawing.Size(1042, 534);
             this.panelGame.TabIndex = 7;
             this.panelGame.Visible = false;
             // 
             // Lobby
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1413, 418);
+            this.ClientSize = new System.Drawing.Size(1060, 340);
             this.Controls.Add(this.tslMenu);
             this.Controls.Add(this.panelGame);
             this.Controls.Add(this.PanelConnections);
@@ -459,7 +468,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HelpButton = true;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Lobby";

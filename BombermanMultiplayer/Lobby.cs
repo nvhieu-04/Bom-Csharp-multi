@@ -14,6 +14,8 @@ namespace BombermanMultiplayer
 {
     public partial class Lobby : Form
     {
+        Network network;
+        
         //Server part
         Server server;
         Task runServer;
@@ -49,78 +51,90 @@ namespace BombermanMultiplayer
         {
             InitializeComponent();
 
-
+            network = new Network();
+            network.Start();
 
         }
 
         private void btnServer_Click(object sender, EventArgs e)
         {
-            if (GameRunning == true)
+
+
+            if(network.CreateNewServer()== true)
             {
-                return;
-            }
-
-            int port = 30000;
-
-            try
-            {
-                int.TryParse(tbPortConnect.Text, out port);
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Error : " + ex.Message, "Problem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-
-
-            server = new Server(port);
-
-            cts = new CancellationTokenSource();
-            string fileName = tbGameToLoad.Text;
-
-            //If there's a game to load
-            if (fileName.Length > 0)
-            {
-                runServer = Task.Run(() => server.Launch(cts.Token, fileName), cts.Token);
+                string data = "newroom;yes;port;" + network._port.ToString();
+                network.Send(data);
             }
             else
             {
-                //Default
-                runServer = Task.Run(() => server.Launch(cts.Token), cts.Token);
+                MessageBox.Show("Error");
             }
+            //if (GameRunning == true)
+            //{
+            //    return;
+            //}
 
-            lbServerOnline.Visible = true;
-            PanelConnections.Visible = false;
+            //int port = 30000;
+
+            //try
+            //{
+            //    int.TryParse(tbPortConnect.Text, out port);
+            //}
+            //catch (Exception ex)
+            //{
+
+            //    MessageBox.Show("Error : " + ex.Message, "Problem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //}
+
+
+            //server = new Server(port);
+
+            //cts = new CancellationTokenSource();
+            //string fileName = tbGameToLoad.Text;
+
+            ////If there's a game to load
+            //if (fileName.Length > 0)
+            //{
+            //    runServer = Task.Run(() => server.Launch(cts.Token, fileName), cts.Token);
+            //}
+            //else
+            //{
+            //    //Default
+            //    runServer = Task.Run(() => server.Launch(cts.Token), cts.Token);
+            //}
+
+            //lbServerOnline.Visible = true;
+            //PanelConnections.Visible = false;
             
 
-            //Make a local connection the server
-            client = new Client("127.0.0.1", 3000);
+            ////Make a local connection the server
+            ////client = new Client("127.0.0.1", 3000);
 
-            Station = Sender.Player1;
+            //Station = Sender.Player1;
 
-            RX_Packet = new Packet();
+            //RX_Packet = new Packet();
 
-            //Wait till data
-            while (RX_Packet.Empty())
-            {
-                client.RecvData(ref RX_Packet);
-            }
+            ////Wait till data
+            //while (RX_Packet.Empty())
+            //{
+            //    client.RecvData(ref RX_Packet);
+            //}
 
-            List<string> PlayersInfos = RX_Packet.GetPayload<List<string>>();
+            //List<string> PlayersInfos = RX_Packet.GetPayload<List<string>>();
 
             
-            lbConnected.Items.Clear();
+            //lbConnected.Items.Clear();
 
-            for (int i = 0; i < PlayersInfos.Count; i++)
-            {
-                lbConnected.Items.Add(PlayersInfos[i]);
+            //for (int i = 0; i < PlayersInfos.Count; i++)
+            //{
+            //    lbConnected.Items.Add(PlayersInfos[i]);
 
-            }
+            //}
             
 
 
-            //Start timer to check for incoming packet on the server
-            ConnectionTimer.Start();
+            ////Start timer to check for incoming packet on the server
+            ////ConnectionTimer.Start();
             
 
         }
@@ -129,7 +143,7 @@ namespace BombermanMultiplayer
 
         private void btnClient_Click(object sender, EventArgs e)
         {
-
+            network.Send("network;no");
             if (GameRunning == true)
             {
                 return;

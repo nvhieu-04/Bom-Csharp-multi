@@ -7,16 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Sockets;
+using System.Net.NetworkInformation;
+using System.Threading;
+
 
 namespace BombermanMultiplayer
 {
     public partial class Mode : Form
     {
+
         public Mode()
         {
             InitializeComponent();
-        }
 
+           
+        }
+         
         private void btnLocalGame_Click(object sender, EventArgs e)
         {
             using (GameWindow f = new GameWindow())
@@ -27,10 +35,15 @@ namespace BombermanMultiplayer
 
         private void btnLanMode_Click(object sender, EventArgs e)
         {
+            
             using (Lobby f = new Lobby())
             {
+                
                 f.ShowDialog();
+                
             }
+
+
         }
 
         private void lbTitle_Click(object sender, EventArgs e)

@@ -1,0 +1,9 @@
+C:\Users\pc\source\repos\Booom\ServerMain\obj\Debug\ServerSocket.csprojAssemblyReference.cache
+C:\Users\pc\source\repos\Booom\ServerMain\obj\Debug\ServerMain.Properties.Resources.resources
+C:\Users\pc\source\repos\Booom\ServerMain\obj\Debug\ServerSocket.csproj.GenerateResource.cache
+C:\Users\pc\source\repos\Booom\ServerMain\obj\Debug\ServerSocket.csproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\Booom\ServerMain\bin\Debug\ServerMain.exe.config
+C:\Users\pc\source\repos\Booom\ServerMain\bin\Debug\ServerMain.exe
+C:\Users\pc\source\repos\Booom\ServerMain\bin\Debug\ServerMain.pdb
+C:\Users\pc\source\repos\Booom\ServerMain\obj\Debug\ServerMain.exe
+C:\Users\pc\source\repos\Booom\ServerMain\obj\Debug\ServerMain.pdb
