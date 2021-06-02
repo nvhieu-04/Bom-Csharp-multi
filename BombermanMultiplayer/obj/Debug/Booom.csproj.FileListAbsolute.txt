@@ -15,3 +15,20 @@ D:\HK4\Lập trình mạng căn bản - NT106.L21.MMCL\Đồ án\Bomberman-maste
 D:\HK4\Lập trình mạng căn bản - NT106.L21.MMCL\Đồ án\Bomberman-master-c#\BombermanMultiplayer\obj\Debug\Booom.csproj.CoreCompileInputs.cache
 D:\HK4\Lập trình mạng căn bản - NT106.L21.MMCL\Đồ án\Bomberman-master-c#\BombermanMultiplayer\obj\Debug\BombermanMultiplayer.exe
 D:\HK4\Lập trình mạng căn bản - NT106.L21.MMCL\Đồ án\Bomberman-master-c#\BombermanMultiplayer\obj\Debug\BombermanMultiplayer.pdb
+C:\Users\pc\Source\Repos\Booom\BombermanMultiplayer\bin\Debug\BombermanMultiplayer.exe.config
+C:\Users\pc\Source\Repos\Booom\BombermanMultiplayer\bin\Debug\BombermanMultiplayer.exe
+C:\Users\pc\Source\Repos\Booom\BombermanMultiplayer\bin\Debug\BombermanMultiplayer.pdb
+C:\Users\pc\Source\Repos\Booom\BombermanMultiplayer\obj\Debug\Booom.csprojAssemblyReference.cache
+C:\Users\pc\Source\Repos\Booom\BombermanMultiplayer\obj\Debug\BombermanMultiplayer.About.resources
+C:\Users\pc\Source\Repos\Booom\BombermanMultiplayer\obj\Debug\BombermanMultiplayer.GameWindow.resources
+C:\Users\pc\Source\Repos\Booom\BombermanMultiplayer\obj\Debug\BombermanMultiplayer.HighScore.resources
+C:\Users\pc\Source\Repos\Booom\BombermanMultiplayer\obj\Debug\BombermanMultiplayer.Lobby.resources
+C:\Users\pc\Source\Repos\Booom\BombermanMultiplayer\obj\Debug\BombermanMultiplayer.MainMenu.resources
+C:\Users\pc\Source\Repos\Booom\BombermanMultiplayer\obj\Debug\BombermanMultiplayer.Mode.resources
+C:\Users\pc\Source\Repos\Booom\BombermanMultiplayer\obj\Debug\BombermanMultiplayer.Properties.Resources.resources
+C:\Users\pc\Source\Repos\Booom\BombermanMultiplayer\obj\Debug\BombermanMultiplayer.Setting.resources
+C:\Users\pc\Source\Repos\Booom\BombermanMultiplayer\obj\Debug\BombermanMultiplayer.Tutorial.resources
+C:\Users\pc\Source\Repos\Booom\BombermanMultiplayer\obj\Debug\Booom.csproj.GenerateResource.cache
+C:\Users\pc\Source\Repos\Booom\BombermanMultiplayer\obj\Debug\Booom.csproj.CoreCompileInputs.cache
+C:\Users\pc\Source\Repos\Booom\BombermanMultiplayer\obj\Debug\BombermanMultiplayer.exe
+C:\Users\pc\Source\Repos\Booom\BombermanMultiplayer\obj\Debug\BombermanMultiplayer.pdb

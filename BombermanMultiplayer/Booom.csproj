@@ -70,6 +70,7 @@
     <Compile Include="MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Network.cs" />
     <Compile Include="SaveGameData.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="GameState.cs" />
