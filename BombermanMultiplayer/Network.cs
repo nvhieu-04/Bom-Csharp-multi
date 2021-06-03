@@ -19,6 +19,8 @@ namespace BombermanMultiplayer
         public Socket _serverPEER;
         public Socket _client;
         public object _currentData;
+        public int _portPEER;
+ 
         public const int _buffer = 1024;
         public void Start()
         {
@@ -49,30 +51,33 @@ namespace BombermanMultiplayer
                     if(strList[0].Equals("newroom"))
                     {
                         if(strList[1].Equals("yes")&&strList[2].Equals("ok"))
-                        {   
-                            int port = 30000;
-                            IPEndPoint iPEnd = new IPEndPoint(IPAddress.Parse("127.0.0.1"), port);
-                            _serverPEER = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                            while (true)
-                            {
-                                try
-                                {
+                        {
+                            //int port = 30000;
+                            //IPEndPoint iPEnd = new IPEndPoint(IPAddress.Parse("127.0.0.1"), port);
+                            //_serverPEER = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                            //while (true)
+                            //{
+                            //    try
+                            //    {
 
-                                    _serverPEER.Bind(iPEnd);
-                                    break;
+                            //        _serverPEER.Bind(iPEnd);
 
-                                }
-                                catch
-                                {
-                                    port++;
-                                }
-                            }
-                            _port = port;
+                            //        break;
+
+                            //    }
+                            //    catch
+                            //    {
+                            //        port++;
+                            //    }
+                            //}
+                            //_port = port;
+                               
 
                         }
                         if (strList[1].Equals("no") && strList[2].Equals("ok"))
                         {
-
+                            _portPEER = Int32.Parse(strList[3]);
+                            
 
                         }
                     }    
@@ -93,7 +98,7 @@ namespace BombermanMultiplayer
             {
                 try
                 {
-
+                    
                     _serverPEER.Bind(iPEnd);
                     break;
 
@@ -104,6 +109,7 @@ namespace BombermanMultiplayer
                 }
             }
             _port = port;
+            _serverPEER.Dispose();
 
             return true;
         }

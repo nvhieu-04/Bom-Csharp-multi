@@ -28,7 +28,7 @@ namespace BombermanMultiplayer
         //If all players are not connected
         private bool WaitingPlayers = true;
 
-        private int port = 3000;
+        private int port;
 
         //The variable describing the state of the game, who'll be sended throught network
         GameState gamestate;
@@ -60,8 +60,8 @@ namespace BombermanMultiplayer
         /// </summary>
         /// <param name="token"> the token to cancel the task (server running)</param>
         public void Launch(CancellationToken token, string fileName = null)
-        {
-            server = new TcpListener(IPAddress.Any, 3000);
+        {   
+            server = new TcpListener(IPAddress.Parse("127.0.0.1"),port);
             server.Start();
             IsRunning = true;
 

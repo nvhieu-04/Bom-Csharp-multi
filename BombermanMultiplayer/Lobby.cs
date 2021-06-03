@@ -62,23 +62,23 @@ namespace BombermanMultiplayer
 
             if(network.CreateNewServer()== true)
             {
-                string data = "newroom;yes;port;" + network._port.ToString();
+                string data = "newroom;yes;port;" + network._port.ToString()+ ";"+tbName.Text.ToString();
                 network.Send(data);
             }
             else
             {
                 MessageBox.Show("Error");
             }
-            //if (GameRunning == true)
-            //{
-            //    return;
-            //}
+            if (GameRunning == true)
+            {
+                return;
+            }
 
-            //int port = 30000;
+            int port=network._port;
 
             //try
             //{
-            //    int.TryParse(tbPortConnect.Text, out port);
+            //    int.TryParse(network._port.ToString(), out port);
             //}
             //catch (Exception ex)
             //{
@@ -87,55 +87,55 @@ namespace BombermanMultiplayer
             //}
 
 
-            //server = new Server(port);
+            server = new Server(port);
 
-            //cts = new CancellationTokenSource();
-            //string fileName = tbGameToLoad.Text;
+            cts = new CancellationTokenSource();
+            string fileName = tbGameToLoad.Text;
 
-            ////If there's a game to load
-            //if (fileName.Length > 0)
-            //{
-            //    runServer = Task.Run(() => server.Launch(cts.Token, fileName), cts.Token);
-            //}
-            //else
-            //{
-            //    //Default
-            //    runServer = Task.Run(() => server.Launch(cts.Token), cts.Token);
-            //}
+           // If there's a game to load
+            if (fileName.Length > 0)
+            {
+                runServer = Task.Run(() => server.Launch(cts.Token, fileName), cts.Token);
+            }
+            else
+            {
+                //Default
+                runServer = Task.Run(() => server.Launch(cts.Token), cts.Token);
+            }
 
-            //lbServerOnline.Visible = true;
-            //PanelConnections.Visible = false;
-            
-
-            ////Make a local connection the server
-            ////client = new Client("127.0.0.1", 3000);
-
-            //Station = Sender.Player1;
-
-            //RX_Packet = new Packet();
-
-            ////Wait till data
-            //while (RX_Packet.Empty())
-            //{
-            //    client.RecvData(ref RX_Packet);
-            //}
-
-            //List<string> PlayersInfos = RX_Packet.GetPayload<List<string>>();
-
-            
-            //lbConnected.Items.Clear();
-
-            //for (int i = 0; i < PlayersInfos.Count; i++)
-            //{
-            //    lbConnected.Items.Add(PlayersInfos[i]);
-
-            //}
-            
+            lbServerOnline.Visible = true;
+            PanelConnections.Visible = false;
 
 
-            ////Start timer to check for incoming packet on the server
-            ////ConnectionTimer.Start();
-            
+            //Make a local connection the server
+            client = new Client("127.0.0.1", port);
+
+            Station = Sender.Player1;
+
+            RX_Packet = new Packet();
+
+            //Wait till data
+            while (RX_Packet.Empty())
+            {
+                client.RecvData(ref RX_Packet);
+            }
+
+            List<string> PlayersInfos = RX_Packet.GetPayload<List<string>>();
+
+
+            lbConnected.Items.Clear();
+
+            for (int i = 0; i < PlayersInfos.Count; i++)
+            {
+                lbConnected.Items.Add(PlayersInfos[i]);
+
+            }
+
+
+
+            //Start timer to check for incoming packet on the server
+            ConnectionTimer.Start();
+
 
         }
 
@@ -143,17 +143,24 @@ namespace BombermanMultiplayer
 
         private void btnClient_Click(object sender, EventArgs e)
         {
-            network.Send("network;no");
+            network.Send("newroom;no;"+tbNamePEER.Text.ToString());
+            
+
+            
+        }
+        public void StartClient2()
+        {
+            int port = network._portPEER;
             if (GameRunning == true)
             {
                 return;
 
             }
 
-            int port = 0;
 
-            
-            if (!ipParser.IsMatch(tbAddressConnect.Text))
+
+
+            if (!ipParser.IsMatch("127.0.0.1"))
             {
                 MessageBox.Show("No valid IP address", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
@@ -161,10 +168,10 @@ namespace BombermanMultiplayer
 
             try
             {
-                int.TryParse(tbPortConnect.Text, out port);
+                int.TryParse(network._portPEER.ToString(), out port);
 
                 //Connexion
-                client = new Client(tbAddressConnect.Text, port);
+                client = new Client("127.0.0.1", port);
 
             }
             catch (Exception ex)
@@ -908,6 +915,11 @@ namespace BombermanMultiplayer
         private void panelServer_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnStartClient_Click(object sender, EventArgs e)
+        {
+            StartClient2();
         }
     }
 }
