@@ -22,7 +22,7 @@ namespace BombermanMultiplayer
         //Used to cancel a task during her execution
         CancellationTokenSource cts;
 
-
+        
         Client client;
         bool GameRunning = false;
 
@@ -53,39 +53,21 @@ namespace BombermanMultiplayer
 
             network = new Network();
             network.Start();
-
         }
 
         private void btnServer_Click(object sender, EventArgs e)
         {
-
-
-            if(network.CreateNewServer()== true)
-            {
-                string data = "newroom;yes;port;" + network._port.ToString()+ ";"+tbName.Text.ToString();
-                network.Send(data);
-            }
-            else
-            {
-                MessageBox.Show("Error");
-            }
+            
+            string data = "newroom;yes;port;" + tbName.Text.ToString();
+            network.Send(data);
+            Thread.Sleep(50);
+            int port = network._portRoom;
+           
+            network.CreateNewServer(port);
             if (GameRunning == true)
             {
                 return;
             }
-
-            int port=network._port;
-
-            //try
-            //{
-            //    int.TryParse(network._port.ToString(), out port);
-            //}
-            //catch (Exception ex)
-            //{
-
-            //    MessageBox.Show("Error : " + ex.Message, "Problem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //}
-
 
             server = new Server(port);
 
@@ -108,10 +90,8 @@ namespace BombermanMultiplayer
 
 
             //Make a local connection the server
-            client = new Client("127.0.0.1", port);
-
             Station = Sender.Player1;
-
+            client = new Client("127.0.0.1", port);
             RX_Packet = new Packet();
 
             //Wait till data
@@ -119,68 +99,51 @@ namespace BombermanMultiplayer
             {
                 client.RecvData(ref RX_Packet);
             }
-
             List<string> PlayersInfos = RX_Packet.GetPayload<List<string>>();
-
-
             lbConnected.Items.Clear();
 
             for (int i = 0; i < PlayersInfos.Count; i++)
             {
                 lbConnected.Items.Add(PlayersInfos[i]);
-
             }
-
-
-
             //Start timer to check for incoming packet on the server
             ConnectionTimer.Start();
-
-
         }
-
-
-
         private void btnClient_Click(object sender, EventArgs e)
         {
-            network.Send("newroom;no;"+tbNamePEER.Text.ToString());
+            network.Send("find;"+tbNamePEER.Text.ToString());
+            Thread.Sleep(500);
+            int port = network._portPEER;
             
-
-            
+            if (port == 0)
+            {
+                MessageBox.Show("Không tìm thấy phòng!");
+                btnClient.Enabled = true;
+            }
+                
+            else
+            {
+                MessageBox.Show("Đã tìm thấy phòng!!");
+                btnClient.Enabled = false;
+            }
+           
         }
         public void StartClient2()
         {
             int port = network._portPEER;
+            
+            client = new Client("127.0.0.1", port);
+
             if (GameRunning == true)
             {
                 return;
-
             }
-
-
-
 
             if (!ipParser.IsMatch("127.0.0.1"))
             {
                 MessageBox.Show("No valid IP address", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-
-            try
-            {
-                int.TryParse(network._portPEER.ToString(), out port);
-
-                //Connexion
-                client = new Client("127.0.0.1", port);
-
-            }
-            catch (Exception ex)
-            {
-
-                return;
-            }
-
-
 
             RX_Packet = new Packet();
 

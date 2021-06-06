@@ -7,3 +7,13 @@ C:\Users\pc\source\repos\Booom\ServerMain\bin\Debug\ServerMain.exe
 C:\Users\pc\source\repos\Booom\ServerMain\bin\Debug\ServerMain.pdb
 C:\Users\pc\source\repos\Booom\ServerMain\obj\Debug\ServerMain.exe
 C:\Users\pc\source\repos\Booom\ServerMain\obj\Debug\ServerMain.pdb
+C:\Users\Admin\AppData\Local\GitHubDesktop\app-2.8.1\Booom\ServerMain\bin\Debug\ServerMain.exe.config
+C:\Users\Admin\AppData\Local\GitHubDesktop\app-2.8.1\Booom\ServerMain\bin\Debug\ServerMain.exe
+C:\Users\Admin\AppData\Local\GitHubDesktop\app-2.8.1\Booom\ServerMain\bin\Debug\ServerMain.pdb
+C:\Users\Admin\AppData\Local\GitHubDesktop\app-2.8.1\Booom\ServerMain\obj\Debug\ServerSocket.csprojAssemblyReference.cache
+C:\Users\Admin\AppData\Local\GitHubDesktop\app-2.8.1\Booom\ServerMain\obj\Debug\ServerMain.Properties.Resources.resources
+C:\Users\Admin\AppData\Local\GitHubDesktop\app-2.8.1\Booom\ServerMain\obj\Debug\ServerSocket.csproj.GenerateResource.cache
+C:\Users\Admin\AppData\Local\GitHubDesktop\app-2.8.1\Booom\ServerMain\obj\Debug\ServerSocket.csproj.CoreCompileInputs.cache
+C:\Users\Admin\AppData\Local\GitHubDesktop\app-2.8.1\Booom\ServerMain\obj\Debug\ServerMain.exe
+C:\Users\Admin\AppData\Local\GitHubDesktop\app-2.8.1\Booom\ServerMain\obj\Debug\ServerMain.pdb
+C:\Users\Admin\AppData\Local\GitHubDesktop\app-2.8.1\Booom\ServerMain\obj\Debug\ServerMain.Form1.resources
