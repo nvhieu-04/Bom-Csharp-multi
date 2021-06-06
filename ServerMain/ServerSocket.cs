@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Data.SqlClient;
 using System.Data;
-
+using System.Text;
 namespace ServerMain
 {
     class ServerSocket
@@ -17,7 +17,11 @@ namespace ServerMain
         string currentData;
         const int _buffer = 1024;
         Socket server;
-        List<Player> Player;
+        public List<Player> Player;
+        int[] portServer = { 8000, 8050, 8080 };
+      
+        int i = 0;
+        
         public void Start()
         {
             
@@ -68,45 +72,58 @@ namespace ServerMain
                     player.client.Receive(buffer);
                     currentData = (string) Deserialize(buffer);
                     string Data = currentData as string;
-                    char[] b = {';' };
-                    Int32 count = 5;
-                    String[] strList = Data.Split(b, count, StringSplitOptions.RemoveEmptyEntries);
-                    if(strList[0].Equals("newroom"))
+                    
+                    string[] strList = Data.Split(';');
+                    if (strList[0].Equals("newroom"))
                     {
-                        if(strList[1].Equals("yes"))
+                        if (strList[1].Equals("yes"))
                         {
-                            Send("newroom;yes;ok",player.client);
-                            player.port = Int32.Parse(strList[3]);
-                            player.Username = strList[4];
+                            player.port = portServer[i];
+                            player.Username = strList[3];
+                            string send = "yes" + ';' + player.port.ToString();
+                            Send(send, player.client);
 
                         }
-                        if (strList[1].Equals("no"))
+                        i++;
+                    }
+                        
+                    if (strList[0].Equals("find"))
+                    {
+                        int h = 0; //h : dung de nhan biet khi nao gui
+                        for(int j = 0; j < Player.Count; j++)
                         {
-                            foreach(Player item in Player)
+                            if(strList[1] == Player[j].Username)
                             {
-                                if(item.Username.Equals(strList[2]))
+                                h++;
+                                if (h > 0)
                                 {
-
-                                    Send("newroom;no;ok;"+item.port, player.client);
-                                    break;
+                                    string send = "existRoom; " + Player[j].port.ToString();
+                                    Send(send, player.client);
                                 }
                             }
-
                         }
-
-                    }    
-                }
+                        if( h == 0)
+                        {
+                            string send = "notExistRoom;";
+                            Send(send, player.client);
+                        }
+                        
+                    }
+                 }
             }
             catch
             { }
 
         }
-        public void Send(string data_need_to_be_sent, Socket client)
+        public void Send(string data_need_to_be_sent,Socket client)
         {
-            try { client.Send(Serialize(data_need_to_be_sent)); }
+            try 
+            {
+                client.Send(Serialize(data_need_to_be_sent));
+            }
             catch
             {
-                MessageBox.Show(" ");
+                MessageBox.Show("loi o send server ");
             }
         }
 

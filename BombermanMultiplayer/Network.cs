@@ -9,12 +9,13 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Data.SqlClient;
 using System.Data;
+using System.Text;
 
 namespace BombermanMultiplayer
 {
     public class Network
     {
-        public int _port;
+        public int _portRoom;
         public Socket _clientPEER;
         public Socket _serverPEER;
         public Socket _client;
@@ -33,7 +34,7 @@ namespace BombermanMultiplayer
             
         }
 
-        private void Receive()
+        public void Receive()
         {
             _currentData = new object();
             try
@@ -43,84 +44,61 @@ namespace BombermanMultiplayer
                     byte[] buffer = new byte[_buffer * 5];
                     _client.Receive(buffer);
                     _currentData = Deserialize(buffer);
-                    string data = _currentData as string;
-                    char[] b = { ';' };
-                    Int32 count = 4;
-                    String[] strList = data.Split(b,count,StringSplitOptions.RemoveEmptyEntries);
-
-                    if(strList[0].Equals("newroom"))
+                    string getPort = _currentData as string;
+                    string[] arrGetPort = getPort.Split(';');
+                    if(arrGetPort[0] == "yes")
                     {
-                        if(strList[1].Equals("yes")&&strList[2].Equals("ok"))
-                        {
-                            //int port = 30000;
-                            //IPEndPoint iPEnd = new IPEndPoint(IPAddress.Parse("127.0.0.1"), port);
-                            //_serverPEER = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                            //while (true)
-                            //{
-                            //    try
-                            //    {
-
-                            //        _serverPEER.Bind(iPEnd);
-
-                            //        break;
-
-                            //    }
-                            //    catch
-                            //    {
-                            //        port++;
-                            //    }
-                            //}
-                            //_port = port;
-                               
-
-                        }
-                        if (strList[1].Equals("no") && strList[2].Equals("ok"))
-                        {
-                            _portPEER = Int32.Parse(strList[3]);
-                            
-
-                        }
-                    }    
-
+                        _portRoom = int.Parse(arrGetPort[1]);
+                    }
+                    else if(arrGetPort[0] == "existRoom")
+                    {
+                        _portPEER = int.Parse(arrGetPort[1]);
+                    }
+                    else if(arrGetPort[0] == "noExistRoom")
+                    {
+                        _portPEER = 0;
+                    }
                 }
             }
             catch
-            { 
-
+            {
+                MessageBox.Show("Cann't receive");
             }
         }
-        public bool CreateNewServer()
+        public void CreateNewServer(int port)
         {
-            int port = 30000;
+            
             IPEndPoint iPEnd = new IPEndPoint(IPAddress.Parse("127.0.0.1"), port);
             _serverPEER = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             while (true)
             {
                 try
                 {
-                    
                     _serverPEER.Bind(iPEnd);
-                    break;
 
+                    break;
                 }
                 catch
                 {
-                    port++;
+                    MessageBox.Show("Loi o create server");
                 }
             }
-            _port = port;
             _serverPEER.Dispose();
 
-            return true;
+            
         }
 
 
         public void Send(string data_need_to_be_sent)
         {   
-            try { _client.Send(Serialize(data_need_to_be_sent)); }
+            try 
+            {
+               
+                _client.Send(Serialize(data_need_to_be_sent));
+            }
             catch
             {
-                MessageBox.Show(" ");
+                MessageBox.Show("Loi o send network ");
             }
         }
         byte[] Serialize(object o)
