@@ -13,20 +13,20 @@ using System.Text;
 namespace ServerMain
 {
     class ServerSocket
-    {
+    {/*
         string currentData;
         const int _buffer = 1024;
         Socket server;
-        public List<Player> Player;
+        public List<Player> listPlayer;
         int[] portServer = { 8000, 8050, 8080 };
-      
+        
         int i = 0;
         
         public void Start()
         {
             
             server = new Socket(AddressFamily.InterNetwork,SocketType.Stream,ProtocolType.Tcp);
-            Player = new List<Player>();
+            listPlayer = new List<Player>();
             IPEndPoint iep = new IPEndPoint(IPAddress.Any, 25000);
             try
             {
@@ -38,15 +38,18 @@ namespace ServerMain
             }
             Thread Listen = new Thread(() =>
             {
-                try { 
-                while(true)
+                try 
+                { 
+                    while(true)
                     {
                         server.Listen(500);
-                        Socket client = server.Accept();
-                        Player player = new Player();
-                        player.client = client;
-                        Player.Add(player);
-                        player.client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, true);
+                        Socket _client = server.Accept();
+                        Player _player = new Player();
+                        _player.client = _client;
+
+                        listPlayer.Add(_player);
+                        
+                        _player.client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, true);
                         Thread receive = new Thread(Receive);
                         receive.IsBackground = true;
                         receive.Start(player);
@@ -79,7 +82,8 @@ namespace ServerMain
                         if (strList[1].Equals("yes"))
                         {
                             player.port = portServer[i];
-                            player.Username = strList[3];
+                            player.Room = strList[3];
+                            player.Username = strList[4];
                             string send = "yes" + ';' + player.port.ToString();
                             Send(send, player.client);
 
@@ -92,14 +96,10 @@ namespace ServerMain
                         int h = 0; //h : dung de nhan biet khi nao gui
                         for(int j = 0; j < Player.Count; j++)
                         {
-                            if(strList[1] == Player[j].Username)
+                            if(strList[1] == Player[j].Room)
                             {
-                                h++;
-                                if (h > 0)
-                                {
-                                    string send = "existRoom; " + Player[j].port.ToString();
-                                    Send(send, player.client);
-                                }
+                                string send = "existRoom; " + Player[j].port.ToString();
+                                Send(send, player.client);
                             }
                         }
                         if( h == 0)
@@ -133,6 +133,7 @@ namespace ServerMain
             BinaryFormatter bf = new BinaryFormatter();
             bf.Serialize(ms, o);
             return ms.ToArray();
+            
         }
         object Deserialize(byte[] data)
         {
@@ -144,15 +145,17 @@ namespace ServerMain
     public class Player
     {
         public string Username;
-        public Socket client;
+        public string Room;
+        public Socket clientPlayer;
         public int port;
         public Room room;
-
+        public int idPlayer = 0;
     }
     public class Room
     {
         string Keyuser;
         bool isEmpty;
     }
-    
+    */
+    }
 }

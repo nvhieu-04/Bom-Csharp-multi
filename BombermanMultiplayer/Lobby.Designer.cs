@@ -59,7 +59,7 @@
             this.tbGameToLoad = new System.Windows.Forms.TextBox();
             this.btnLoadGame = new System.Windows.Forms.Button();
             this.lbPortServer = new System.Windows.Forms.Label();
-            this.tbName = new System.Windows.Forms.TextBox();
+            this.tbNameRoom = new System.Windows.Forms.TextBox();
             this.lbServerOnline = new System.Windows.Forms.Label();
             this.ConnectionTimer = new System.Windows.Forms.Timer(this.components);
             this.refreshGraphics = new System.Windows.Forms.Timer(this.components);
@@ -291,7 +291,7 @@
             this.panelServer.Controls.Add(this.btnLoadGame);
             this.panelServer.Controls.Add(this.btnLaunchServer);
             this.panelServer.Controls.Add(this.lbPortServer);
-            this.panelServer.Controls.Add(this.tbName);
+            this.panelServer.Controls.Add(this.tbNameRoom);
             this.panelServer.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelServer.Location = new System.Drawing.Point(1051, 0);
             this.panelServer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -355,14 +355,14 @@
             this.lbPortServer.TabIndex = 1;
             this.lbPortServer.Text = "Name";
             // 
-            // tbName
+            // tbNameRoom
             // 
-            this.tbName.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.tbName.Location = new System.Drawing.Point(15, 65);
-            this.tbName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(100, 22);
-            this.tbName.TabIndex = 0;
+            this.tbNameRoom.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tbNameRoom.Location = new System.Drawing.Point(15, 65);
+            this.tbNameRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbNameRoom.Name = "tbNameRoom";
+            this.tbNameRoom.Size = new System.Drawing.Size(100, 22);
+            this.tbNameRoom.TabIndex = 0;
             // 
             // lbServerOnline
             // 
@@ -478,7 +478,7 @@
         private System.Windows.Forms.Panel PanelConnections;
         private System.Windows.Forms.Panel panelServer;
         private System.Windows.Forms.Label lbPortServer;
-        private System.Windows.Forms.TextBox tbName;
+        private System.Windows.Forms.TextBox tbNameRoom;
         private System.Windows.Forms.Panel panelClient;
         private System.Windows.Forms.Label lbPortConnect;
         private System.Windows.Forms.TextBox tbNamePEER;
