@@ -58,9 +58,9 @@ namespace BombermanMultiplayer
         private void btnServer_Click(object sender, EventArgs e)
         {
             
-            string data = "newroom;yes;port;" + tbName.Text.ToString();
+            string data = "newroom;yes;port;" + tbNameRoom.Text.ToString()+ ';' + tbNamePlayer.Text ;
             network.Send(data);
-            Thread.Sleep(50);
+            Thread.Sleep(500);
             int port = network._portRoom;
            
             network.CreateNewServer(port);
@@ -111,10 +111,9 @@ namespace BombermanMultiplayer
         }
         private void btnClient_Click(object sender, EventArgs e)
         {
-            network.Send("find;"+tbNamePEER.Text.ToString());
+            network.Send("find;" + tbNamePEER.Text.ToString() + ';' + tbNamePlayer.Text);
             Thread.Sleep(500);
             int port = network._portPEER;
-            
             if (port == 0)
             {
                 MessageBox.Show("Không tìm thấy phòng!");
